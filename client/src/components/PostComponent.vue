@@ -60,7 +60,7 @@ export default {
   box-sizing: border-box;
 }
 div.container {
-  background-image: url('../assets/cold-bg.png');
+  background-color:dimgray;
   background-size: cover;
   background-position: bottom;
   transition: 0.4s;
