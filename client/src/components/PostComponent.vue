@@ -4,10 +4,13 @@
     <!-- CREATE POST HERE -->
     <div class="create-post">
       <label for="create-post">Say Something.....</label>
-      <input type="text" id="create-post" v-model="text" placeholder="Create a Post" />
+      <input type="text" class="search-bar" v-model="text" placeholder="Create a Post" />
+      <br>
       <button v-on:click="createPost">Post</button>
     </div>
-    <hr />
+    <br>
+    <br>
+    <br>
     <p class="error" v-if="error">{{error}}</p>
     <div class="posts-container">
       <div class="post" v-for="(post,index) in posts" v-bind:item="post" v-bind:index="index" v-bind:key="post._id" v-on:dblclick="deletePost(post._id)">
@@ -51,9 +54,17 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 div.container {
-  max-width: 800px;
-  margin: 0 auto;
+  background-image: url('../assets/cold-bg.png');
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4s;
+  
 }
 p.error {
   border: 1px solid #ff5b5f;
@@ -82,5 +93,30 @@ p.text {
   font-size: 22px;
   font-weight: 700;
   margin-bottom: 0;
+}
+
+.search-bar{
+  display: block;
+  width: 100%;
+  padding: 15px;
+
+  color: #313131;
+  font-size: 20px;
+
+  appearance: none;
+  border:  none;
+  outline: none;
+  background: none;
+
+  box-shadow: 0px 0px 8px rgba(0,0,0,0.25);
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 0px 19px 0px 19px;
+  transition: 0.4s;
+
+}
+.search-bar:focus{
+  box-shadow: 0px 0px 16px rgba(0,0,0,0.25);
+  background-color:rgba(255,255,255,0.75);
+  border-radius: 19px 0px 19px 0px ;
 }
 </style>
